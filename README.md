@@ -4,9 +4,11 @@ Website for UCLA BioKind Analytics.
 
 ## Updating the site
 
-Edit `app/site-data.ts` to update chapter links, recruitment details, project areas, the team year, or members. Page-specific text is in the matching folder under `app/`.
+Edit `app/site-data.ts` to update chapter links, recruitment details, project areas, the team year, members, or showcase partners. Page-specific text is in the matching folder under `app/`.
 
-Member photos belong in `public/images/members/`. Add the image path to the member’s entry in `app/site-data.ts`.
+Member photos belong in `public/images/members/`. Each member entry in `app/site-data.ts` also has editable `bio` and `linkedinUrl` fields.
+
+Partner logos belong in `public/images/partners/`. Set a partner's `featured` field to `true` only when it should have a full case study. Approved showcase screenshots can be placed in `public/images/showcase/`, and approved report excerpts can be placed in `public/documents/showcase/`. Add their paths to the matching entry in `showcasePartners`. Redact files before adding them because everything under `public/` can be downloaded directly.
 
 ## Run locally
 

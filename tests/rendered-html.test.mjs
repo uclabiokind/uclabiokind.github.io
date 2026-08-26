@@ -30,7 +30,7 @@ test("renders every public route", async () => {
   const routes = [
     ["/about", /A student-run chapter at UCLA/],
     ["/members", /Meet the team/],
-    ["/showcase", /Three common starting points/],
+    ["/showcase", /Selected nonprofit partnerships/],
     ["/join", /Two ways to work with us/],
     ["/recruitment", /Recruitment timeline/],
   ];
@@ -71,6 +71,21 @@ test("derives the member year and counts from site data", async () => {
   assert.match(membersPage, /members\.length/);
   assert.match(membersPage, /board\.length/);
   assert.match(membersPage, /generalMembers\.length/);
+  assert.equal(
+    (siteData.match(/role: "Co-Head of Project Management"/g) ?? []).length,
+    2,
+  );
+  assert.equal(
+    (siteData.match(/bio: "Bio coming soon\."/g) ?? []).length,
+    boardCount,
+  );
+  assert.equal(
+    (siteData.match(/linkedinUrl: "https:\/\/www\.linkedin\.com\/in\//g) ?? [])
+      .length,
+    boardCount,
+  );
+  assert.match(visibleHtml, /Co-Head of Project Management/);
+  assert.match(visibleHtml, /class="member-link"/);
 });
 
 test("offers clear student and nonprofit paths", async () => {
@@ -111,6 +126,33 @@ test("includes required brand and social assets", async () => {
     access(new URL("../public/images/biokind-logo.png", import.meta.url)),
     access(new URL("../public/images/biokind-logo-header.png", import.meta.url)),
     access(new URL("../public/images/team-working.jpg", import.meta.url)),
+    access(new URL("../public/images/partners/neurospring.svg", import.meta.url)),
+    access(
+      new URL(
+        "../public/images/partners/world-telehealth-initiative.webp",
+        import.meta.url,
+      ),
+    ),
     access(new URL("../public/favicon.png", import.meta.url)),
   ]);
+});
+
+test("shows direct involvement choices and chapter contact details", async () => {
+  const html = await render("/");
+
+  assert.match(html, /Join the chapter/);
+  assert.match(html, /Partner with our team/);
+  assert.match(html, /uclachapter@biokind\.org/);
+  assert.match(html, /linkedin\.com\/company\/biokindanalytics/);
+});
+
+test("shows partner case studies without exposing unapproved files", async () => {
+  const html = await render("/showcase");
+
+  assert.match(html, /NeuroSpring/);
+  assert.match(html, /World Telehealth Initiative/);
+  assert.match(html, /international clinical sites/);
+  assert.match(html, /Approved project visual/);
+  assert.match(html, /redacted or demonstration data/);
+  assert.doesNotMatch(html, /View approved report excerpt/);
 });

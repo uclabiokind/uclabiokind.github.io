@@ -2,6 +2,7 @@ import {
   assetPath,
   chapterEmail,
   instagramUrl,
+  nationalLinkedInUrl,
   nationalUrl,
   sitePath,
 } from "../site-data";
@@ -28,9 +29,12 @@ export function SiteFooter() {
 
         <div className="footer-column">
           <p className="footer-label">Connect</p>
-          <a href={`mailto:${chapterEmail}`}>Email us</a>
+          <a href={`mailto:${chapterEmail}`}>{chapterEmail}</a>
           <a href={instagramUrl} target="_blank" rel="noreferrer">
             Instagram <span aria-hidden="true">↗</span>
+          </a>
+          <a href={nationalLinkedInUrl} target="_blank" rel="noreferrer">
+            National LinkedIn <span aria-hidden="true">↗</span>
           </a>
           <a href={nationalUrl} target="_blank" rel="noreferrer">
             National network <span aria-hidden="true">↗</span>

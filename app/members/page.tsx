@@ -54,9 +54,21 @@ export default function MembersPage() {
                   <img src={assetPath(member.image)} alt={member.name} />
                 </div>
                 <div className="member-info">
-                  <p>{member.role}</p>
+                  <p className="member-role">{member.role}</p>
                   <h2>{member.name}</h2>
-                  <span>{member.study}</span>
+                  <span className="member-study">{member.study}</span>
+                  <p className="member-bio">{member.bio}</p>
+                  {member.linkedinUrl && (
+                    <a
+                      className="member-link"
+                      href={member.linkedinUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${member.name} on LinkedIn`}
+                    >
+                      LinkedIn <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
@@ -76,7 +88,19 @@ export default function MembersPage() {
                     </div>
                     <div className="member-info">
                       <h2>{member.name}</h2>
-                      <span>{member.study}</span>
+                      <span className="member-study">{member.study}</span>
+                      <p className="member-bio">{member.bio}</p>
+                      {member.linkedinUrl && (
+                        <a
+                          className="member-link"
+                          href={member.linkedinUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`${member.name} on LinkedIn`}
+                        >
+                          LinkedIn <span aria-hidden="true">↗</span>
+                        </a>
+                      )}
                     </div>
                   </article>
                 ))}

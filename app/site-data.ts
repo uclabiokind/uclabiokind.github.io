@@ -1,6 +1,8 @@
 export const chapterEmail = "uclachapter@biokind.org";
 export const instagramUrl = "https://www.instagram.com/biokind_ucla";
 export const nationalUrl = "https://www.biokind.org/";
+export const nationalLinkedInUrl =
+  "https://www.linkedin.com/company/biokindanalytics";
 export const mailingListUrl = "https://forms.gle/dWmbJksPTsv1jBVr9";
 
 // Update these fields when a new student recruitment cycle opens.
@@ -105,6 +107,8 @@ export const members = [
     study: "Fourth year · Computational Biology",
     image: "/images/members/vyas-koduvayur.jpg",
     group: "Board",
+    bio: "Bio coming soon.",
+    linkedinUrl: "https://www.linkedin.com/in/vyaskoduvayur",
   },
   {
     name: "Ella Chatterjee",
@@ -112,6 +116,8 @@ export const members = [
     study: "Fourth year · Statistics & Data Science",
     image: "/images/members/ella-chatterjee.jpg",
     group: "Board",
+    bio: "Bio coming soon.",
+    linkedinUrl: "https://www.linkedin.com/in/ella-chatterjee-5780a2292",
   },
   {
     name: "Preston Gao",
@@ -119,6 +125,8 @@ export const members = [
     study: "Fourth year · Statistics & Data Science Engineering",
     image: "/images/members/preston-gao.jpg",
     group: "Board",
+    bio: "Bio coming soon.",
+    linkedinUrl: "https://www.linkedin.com/in/prestongao",
   },
   {
     name: "Michael Makhoul",
@@ -126,19 +134,83 @@ export const members = [
     study: "Third year · Bioengineering",
     image: "/images/members/michael-makhoul.jpg",
     group: "Board",
+    bio: "Bio coming soon.",
+    linkedinUrl: "https://www.linkedin.com/in/makhoulmichael",
   },
   {
     name: "Abigail Rodriguez",
-    role: "Head of Project Management",
+    role: "Co-Head of Project Management",
     study: "Fourth year · Statistics & Data Science",
     image: "/images/members/abigail-rodriguez.jpg",
     group: "Board",
+    bio: "Bio coming soon.",
+    linkedinUrl: "https://www.linkedin.com/in/abigail-rodriguez-6b4430395",
   },
   {
     name: "Melanie Pizano",
-    role: "Head of Project Management",
+    role: "Co-Head of Project Management",
     study: "Fourth year · Statistics & Data Science",
     image: "/images/members/melanie-pizano.jpg",
     group: "Board",
+    bio: "Bio coming soon.",
+    linkedinUrl: "https://www.linkedin.com/in/melanie-pizano-1748a6327",
+  },
+];
+
+export type ShowcaseImage = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+export type ShowcasePartner = {
+  id: string;
+  name: string;
+  category: string;
+  websiteUrl: string;
+  logo: string;
+  featured: boolean;
+  organizationSummary: string;
+  projectQuestion: string;
+  deliverables: string[];
+  images: ShowcaseImage[];
+  reportExcerpt: string;
+};
+
+// Add only partner-approved screenshots or report excerpts. Anything placed in
+// public/ can be viewed and downloaded directly, so redact source files first.
+export const showcasePartners: ShowcasePartner[] = [
+  {
+    id: "neurospring",
+    name: "NeuroSpring",
+    category: "Neuroscience research nonprofit",
+    websiteUrl: "https://neurospring.org/",
+    logo: "/images/partners/neurospring.svg",
+    featured: true,
+    organizationSummary:
+      "NeuroSpring advances neuroscience research and training to improve healthcare for underserved communities.",
+    projectQuestion: "",
+    deliverables: [],
+    images: [],
+    reportExcerpt: "",
+  },
+  {
+    id: "world-telehealth-initiative",
+    name: "World Telehealth Initiative",
+    category: "Global telehealth nonprofit",
+    websiteUrl: "https://www.worldtelehealthinitiative.org/",
+    logo: "/images/partners/world-telehealth-initiative.webp",
+    featured: true,
+    organizationSummary:
+      "WTI connects volunteer medical specialists with healthcare teams in low-resource communities through telehealth.",
+    projectQuestion:
+      "WTI asked the UCLA team to analyze operational data from international clinical sites and identify patterns that could support future planning.",
+    deliverables: [
+      "Cleaned and organized operational data",
+      "Analysis of clinical activity, volunteer hours, seasonal trends, and geographic patterns",
+      "Tableau visualizations of telehealth reach and growth over time",
+    ],
+    images: [],
+    reportExcerpt: "",
   },
 ];

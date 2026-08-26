@@ -1,7 +1,6 @@
 import {
   chapterEmail,
   instagramUrl,
-  nationalUrl,
   sitePath,
 } from "../site-data";
 
@@ -56,10 +55,10 @@ export function JoinOptions({ compact = false }: JoinOptionsProps) {
             </p>
             <div className="join-option-actions">
               <a className="button button-dark" href={nonprofitEmail}>
-                Email UCLA BioKind <span aria-hidden="true">↗</span>
+                Start a nonprofit project <span aria-hidden="true">↗</span>
               </a>
-              <a className="text-link" href={nationalUrl} target="_blank" rel="noreferrer">
-                National BioKind <span aria-hidden="true">↗</span>
+              <a className="join-email-address" href={`mailto:${chapterEmail}`}>
+                {chapterEmail}
               </a>
             </div>
           </article>

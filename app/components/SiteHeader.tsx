@@ -40,9 +40,24 @@ export function SiteHeader() {
               {item.label}
             </a>
           ))}
-          <a className="button button-small button-dark" href={sitePath("/join")}>
-            Get involved <span aria-hidden="true">↗</span>
-          </a>
+          <div className="get-involved-nav">
+            <a
+              className="button button-small button-dark"
+              href={sitePath("/join")}
+            >
+              Get involved <span className="get-involved-caret" aria-hidden="true">⌄</span>
+            </a>
+            <div className="get-involved-dropdown">
+              <a href={sitePath("/recruitment")}>
+                <strong>Join the chapter</strong>
+                <span>For UCLA students</span>
+              </a>
+              <a href={`${sitePath("/join")}#nonprofits`}>
+                <strong>Partner with our team</strong>
+                <span>For healthcare nonprofits</span>
+              </a>
+            </div>
+          </div>
         </nav>
 
         <button
