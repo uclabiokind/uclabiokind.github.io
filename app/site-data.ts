@@ -212,7 +212,11 @@ export const showcasePartners: ShowcasePartner[] = [
       "NeuroSpring advances neuroscience research and training to improve healthcare for underserved communities.",
     projectQuestion:
       "NeuroSpring asked the UCLA team to expand and analyze a large grantmaker database, then turn it into clear visual tools to support its funding efforts.",
-    deliverables: [],
+    deliverables: [
+      "An expanded grantmaker database with more complete funding information",
+      "An interactive tool for filtering and managing grantmakers, exploring heatmaps, taking notes, and organizing outreach",
+      "A report highlighting trends across the grantmaker landscape",
+    ],
     images: [],
     reportExcerpt: "",
   },
