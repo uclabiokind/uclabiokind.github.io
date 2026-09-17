@@ -33,10 +33,6 @@ export default function MembersPage() {
           </div>
           <div className="members-hero-note">
             <span>{memberYear} team</span>
-            <p>
-              {members.length} {members.length === 1 ? "member" : "members"} in
-              the UCLA chapter.
-            </p>
           </div>
         </div>
       </section>

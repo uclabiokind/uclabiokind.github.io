@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <main id="main-content">
       <section className="page-hero quiet-page-hero">
-        <div className="shell page-hero-grid">
+        <div className="shell">
           <div className="page-hero-copy reveal">
             <p className="eyebrow eyebrow-light">About UCLA BioKind</p>
             <h1>
@@ -23,13 +23,6 @@ export default function AboutPage() {
               We connect UCLA undergraduates with healthcare nonprofits that
               need help understanding their data.
             </p>
-          </div>
-          <div
-            className="simple-page-hero-image about-photo-placeholder reveal reveal-delay"
-            role="img"
-            aria-label="Image placeholder for UCLA BioKind together"
-          >
-            <span>Image of UCLA BioKind together</span>
           </div>
         </div>
       </section>
@@ -44,6 +37,12 @@ export default function AboutPage() {
             <p className="large-copy">
               Our members bring together data science, statistics, computing,
               economics, and the life sciences.
+            </p>
+            <p>
+              In teams of 10–12, students work with healthcare nonprofits to
+              clean and analyze donor, patient and program, and event and campaign
+              data. We turn what we learn into reports, dashboards, and practical
+              recommendations that help our partners make decisions.
             </p>
             <p>
               We are part of a national BioKind network with 23 university

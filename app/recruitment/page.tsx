@@ -35,10 +35,6 @@ export default function RecruitmentPage() {
             <h2>{recruitment.status}</h2>
           </div>
           <div className="recruitment-status-copy">
-            <p>
-              This page will always show the latest process and application link
-              when the application cycle opens.
-            </p>
             <div className="button-row">
               {recruitment.applicationUrl ? (
                 <a
@@ -99,10 +95,6 @@ export default function RecruitmentPage() {
               </article>
             ))}
           </div>
-          <p className="recruitment-timeline-note">
-            Exact dates are posted here and on Instagram when each recruitment
-            cycle is confirmed.
-          </p>
         </div>
       </section>
     </main>

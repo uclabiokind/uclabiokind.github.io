@@ -68,7 +68,6 @@ test("derives the member year and counts from site data", async () => {
   }
   assert.doesNotMatch(visibleHtml, /archive/i);
   assert.doesNotMatch(visibleHtml, /Current member with a roster update/i);
-  assert.match(membersPage, /members\.length/);
   assert.match(membersPage, /board\.length/);
   assert.match(membersPage, /generalMembers\.length/);
   assert.equal(
@@ -101,12 +100,8 @@ test("offers clear student and nonprofit paths", async () => {
     joinHtml,
     /mailto:uclachapter@biokind\.org\?subject=Nonprofit%20partnership%20inquiry/,
   );
-  assert.match(recruitmentHtml, /Next cycle is in Fall 2026/);
+  assert.match(recruitmentHtml, /We are currently recruiting for the Fall 2026 cycle/);
   assert.match(recruitmentHtml, /Join the general interest mailing list/);
-  assert.match(
-    recruitmentHtml,
-    /latest process and application link when the application cycle opens/,
-  );
   assert.doesNotMatch(recruitmentHtml, /A simple path into the chapter/);
   assert.match(recruitmentHtml, /forms\.gle\/dWmbJksPTsv1jBVr9/);
   assert.match(recruitmentHtml, /Applications open/);
@@ -114,11 +109,11 @@ test("offers clear student and nonprofit paths", async () => {
   assert.doesNotMatch(recruitmentHtml, /09\/26|10\/4|10\/8|10\/11|2023/);
 });
 
-test("shows the team photo placeholder on the About page", async () => {
+test("shows the chapter overview without the old photo placeholder", async () => {
   const html = await render("/about");
 
-  assert.match(html, /Image of UCLA BioKind together/);
-  assert.match(html, /Image placeholder for UCLA BioKind together/);
+  assert.doesNotMatch(html, /Image of UCLA BioKind together/);
+  assert.doesNotMatch(html, /Image placeholder for UCLA BioKind together/);
 });
 
 test("includes required brand and social assets", async () => {
@@ -132,6 +127,15 @@ test("includes required brand and social assets", async () => {
         "../public/images/partners/world-telehealth-initiative.webp",
         import.meta.url,
       ),
+    ),
+    ...[
+      "claris-health.svg",
+      "noras-home.svg",
+      "hope-for-three.jpg",
+      "opica.png",
+      "pediatric-cancer-research-foundation.webp",
+    ].map((filename) =>
+      access(new URL(`../public/images/partners/${filename}`, import.meta.url)),
     ),
     access(new URL("../public/favicon.png", import.meta.url)),
   ]);

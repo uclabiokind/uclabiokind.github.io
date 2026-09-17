@@ -7,7 +7,7 @@ export const mailingListUrl = "https://forms.gle/dWmbJksPTsv1jBVr9";
 
 // Update these fields when a new student recruitment cycle opens.
 export const recruitment = {
-  status: "Next cycle is in Fall 2026.",
+  status: "We are currently recruiting for the Fall 2026 cycle.",
   applicationUrl: "",
   updatesUrl: mailingListUrl,
   timeline: [
@@ -79,21 +79,42 @@ export const practiceAreas = [
     eyebrow: "Donor analysis",
     title: "Understand giving.",
     description:
-      "Spot retention patterns and support stronger fundraising.",
+      "Explore giving patterns, group donors by their history, and identify supporters who may stop giving. Use retention models and revenue forecasts to help nonprofits plan their fundraising.",
   },
   {
     number: "02",
     eyebrow: "Patient & program analysis",
     title: "Understand reach.",
     description:
-      "Explore who programs serve and where gaps may exist.",
+      "Study who a nonprofit serves, where access falls short, and how outcomes change over time. Turn demographic and program data into visuals that support planning and grant applications.",
   },
   {
     number: "03",
     eyebrow: "Event & campaign analysis",
     title: "Understand performance.",
     description:
-      "Measure attendance, return, and campaign results.",
+      "Evaluate attendance, fundraising returns, and outreach channels across events and campaigns. Compare results to help a nonprofit understand what worked and where to focus next.",
+  },
+];
+
+export const projectSteps = [
+  {
+    number: "01",
+    title: "Understand the question",
+    description:
+      "Meet your nonprofit partner, define the project goals, and learn how to work responsibly with their data.",
+  },
+  {
+    number: "02",
+    title: "Work with the data",
+    description:
+      "Clean, model, and visualize real datasets with your team. Get feedback through weekly check-ins and faculty guidance.",
+  },
+  {
+    number: "03",
+    title: "Share your findings",
+    description:
+      "Present a report or dashboard with practical recommendations, plus documented code the nonprofit can continue using.",
   },
 ];
 
@@ -210,6 +231,71 @@ export const showcasePartners: ShowcasePartner[] = [
       "Analysis of clinical activity, volunteer hours, seasonal trends, and geographic patterns",
       "Tableau visualizations of telehealth reach and growth over time",
     ],
+    images: [],
+    reportExcerpt: "",
+  },
+  {
+    id: "claris-health",
+    name: "ClarisHealth",
+    websiteUrl: "https://www.clarishealth.org/",
+    logo: "/images/partners/claris-health.svg",
+    featured: false,
+    category: "",
+    organizationSummary: "",
+    projectQuestion: "",
+    deliverables: [],
+    images: [],
+    reportExcerpt: "",
+  },
+  {
+    id: "noras-home",
+    name: "Nora’s Home",
+    websiteUrl: "https://norashome.org/",
+    logo: "/images/partners/noras-home.svg",
+    featured: false,
+    category: "",
+    organizationSummary: "",
+    projectQuestion: "",
+    deliverables: [],
+    images: [],
+    reportExcerpt: "",
+  },
+  {
+    id: "hope-for-three",
+    name: "Hope for Three",
+    websiteUrl: "https://hopeforthree.org/",
+    logo: "/images/partners/hope-for-three.jpg",
+    featured: false,
+    category: "",
+    organizationSummary: "",
+    projectQuestion: "",
+    deliverables: [],
+    images: [],
+    reportExcerpt: "",
+  },
+  {
+    id: "opica",
+    name: "OPICA",
+    websiteUrl: "https://www.opica.org/",
+    logo: "/images/partners/opica.png",
+    featured: false,
+    category: "",
+    organizationSummary: "",
+    projectQuestion: "",
+    deliverables: [],
+    images: [],
+    reportExcerpt: "",
+  },
+  {
+    id: "pediatric-cancer-research-foundation",
+    name: "Pediatric Cancer Research Foundation",
+    websiteUrl: "https://www.pcrf-kids.org/",
+    logo: "/images/partners/pediatric-cancer-research-foundation.webp",
+    featured: false,
+    category: "",
+    organizationSummary: "",
+    projectQuestion: "",
+    deliverables: [],
     images: [],
     reportExcerpt: "",
   },

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JoinOptions } from "./components/JoinOptions";
-import { assetPath, practiceAreas, sitePath } from "./site-data";
+import { assetPath, practiceAreas, projectSteps, sitePath } from "./site-data";
 
 export const metadata: Metadata = {
   title: { absolute: "UCLA BioKind Analytics — Data Science for Good" },
@@ -66,10 +66,15 @@ export default function Home() {
           <div className="simple-section-heading">
             <div>
               <p className="eyebrow">What we do</p>
-              <h2>Practical analysis for nonprofit teams.</h2>
+              <h2>Build your skills. Support a nonprofit.</h2>
+              <p className="services-intro">
+                Work in a team of 10–12 student analysts with a faculty advisor
+                and project lead. Apply what you learn in class to real
+                questions in healthcare.
+              </p>
             </div>
             <a className="text-link" href={sitePath("/showcase")}>
-              View our capabilities <span aria-hidden="true">→</span>
+              Explore our projects <span aria-hidden="true">→</span>
             </a>
           </div>
 
@@ -81,6 +86,29 @@ export default function Home() {
                 <p>{area.description}</p>
               </article>
             ))}
+          </div>
+
+          <div className="student-project-process">
+            <p className="eyebrow">How a project works</p>
+            <h3>From the first question to the final presentation.</h3>
+            <p className="project-process-intro">
+              A typical project runs six to ten weeks. You&apos;ll take part in
+              each stage, with support from your team.
+            </p>
+            <ol className="project-step-grid">
+              {projectSteps.map((step) => (
+                <li key={step.number}>
+                  <span className="project-step-number" aria-hidden="true">
+                    {step.number}
+                  </span>
+                  <h4>{step.title}</h4>
+                  <p>{step.description}</p>
+                </li>
+              ))}
+            </ol>
+            <a className="text-link" href={sitePath("/recruitment")}>
+              Join the chapter <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </section>

@@ -76,27 +76,23 @@ export default function ShowcasePage() {
                     {partner.organizationSummary}
                   </p>
 
-                  {partner.projectQuestion && (
-                    <div className="case-study-question">
-                      <p className="case-study-label">Partner question</p>
-                      <p>{partner.projectQuestion}</p>
-                    </div>
-                  )}
+                  <div className="case-study-question">
+                    <p className="case-study-label">Partner question</p>
+                    <p>{partner.projectQuestion || "Project summary coming soon."}</p>
+                  </div>
 
-                  {partner.deliverables.length > 0 ? (
-                    <div className="case-study-deliverables">
-                      <p className="case-study-label">What we delivered</p>
+                  <div className="case-study-deliverables">
+                    <p className="case-study-label">What we delivered</p>
+                    {partner.deliverables.length > 0 ? (
                       <ul>
                         {partner.deliverables.map((deliverable) => (
                           <li key={deliverable}>{deliverable}</li>
                         ))}
                       </ul>
-                    </div>
-                  ) : (
-                    <p className="case-study-review-note">
-                      Project details and approved visuals are coming soon.
-                    </p>
-                  )}
+                    ) : (
+                      <p>Deliverables coming soon.</p>
+                    )}
+                  </div>
 
                   <a
                     className="text-link"
