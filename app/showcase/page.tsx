@@ -47,7 +47,9 @@ export default function ShowcasePage() {
                 rel="noreferrer"
                 key={partner.id}
               >
-                <img src={assetPath(partner.logo)} alt={`${partner.name} logo`} />
+                <div className="partner-logo-frame">
+                  <img src={assetPath(partner.logo)} alt={`${partner.name} logo`} />
+                </div>
                 <span>
                   {partner.name} <b aria-hidden="true">↗</b>
                 </span>
@@ -109,7 +111,9 @@ export default function ShowcasePage() {
                     <div className="case-study-image-grid">
                       {partner.images.map((image) => (
                         <figure key={image.src}>
-                          <img src={assetPath(image.src)} alt={image.alt} />
+                          <a href={assetPath(image.src)} target="_blank" rel="noreferrer" aria-label={`Open full-size image: ${image.caption}`}>
+                            <img src={assetPath(image.src)} alt={image.alt} loading="lazy" />
+                          </a>
                           <figcaption>{image.caption}</figcaption>
                         </figure>
                       ))}

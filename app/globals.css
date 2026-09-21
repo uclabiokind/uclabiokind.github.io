@@ -1095,7 +1095,7 @@ h2 em {
   border: 1px solid var(--line);
 }
 
-.student-project-process > h3 {
+.student-project-process > h2 {
   max-width: 680px;
   margin-bottom: 14px;
   font-family: var(--display);
@@ -1125,7 +1125,7 @@ h2 em {
   font-weight: 800;
 }
 
-.project-step-grid h4 {
+.project-step-grid h3 {
   margin-bottom: 10px;
   font-size: 16px;
 }
@@ -1343,6 +1343,18 @@ h2 em {
   object-fit: contain;
 }
 
+.partner-logo-frame {
+  display: flex;
+  width: 100%;
+  height: 76px;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-study + .member-link {
+  margin-top: 16px;
+}
+
 .partner-logo-card span {
   max-width: 100%;
   font-size: 13px;
@@ -1447,10 +1459,20 @@ h2 em {
 
 .case-study-image-grid img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 260px;
   border: 1px solid var(--line);
-  background: var(--cream);
+  background: white;
   object-fit: contain;
+}
+
+.case-study-image-grid a {
+  display: block;
+  border-radius: 4px;
+}
+
+.case-study-image-grid a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
 }
 
 .case-study-image-grid figcaption {

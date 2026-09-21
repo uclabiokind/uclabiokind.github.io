@@ -41,7 +41,6 @@ export default function MembersPage() {
         <div className="shell">
           <div className="member-section-title">
             <p className="eyebrow">{memberYear} chapter board</p>
-            <span>{memberCount(board.length)}</span>
           </div>
           <div className="member-grid board-grid">
             {board.map((member) => (
@@ -53,7 +52,6 @@ export default function MembersPage() {
                   <p className="member-role">{member.role}</p>
                   <h2>{member.name}</h2>
                   <span className="member-study">{member.study}</span>
-                  <p className="member-bio">{member.bio}</p>
                   {member.linkedinUrl && (
                     <a
                       className="member-link"
@@ -85,7 +83,6 @@ export default function MembersPage() {
                     <div className="member-info">
                       <h2>{member.name}</h2>
                       <span className="member-study">{member.study}</span>
-                      <p className="member-bio">{member.bio}</p>
                       {member.linkedinUrl && (
                         <a
                           className="member-link"

@@ -3,6 +3,7 @@ import {
   chapterEmail,
   instagramUrl,
   recruitment,
+  projectSteps,
 } from "../site-data";
 
 export const metadata: Metadata = {
@@ -76,7 +77,7 @@ export default function RecruitmentPage() {
         <div className="shell">
           <div className="simple-section-heading">
             <div>
-              <h2>Recruitment timeline.</h2>
+              <h2>Fall 2026 recruitment timeline.</h2>
             </div>
             <a className="text-link" href={`mailto:${chapterEmail}`}>
               Ask a question <span aria-hidden="true">↗</span>
@@ -94,6 +95,27 @@ export default function RecruitmentPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="shell">
+          <div className="student-project-process">
+            <p className="eyebrow">How a project works</p>
+            <h2>From the first question to the final presentation.</h2>
+            <p className="project-process-intro">
+              A typical project runs six to ten weeks. You&apos;ll take part in
+              each stage, with support from your team.
+            </p>
+            <ol className="project-step-grid">
+              {projectSteps.map((step) => (
+                <li key={step.number}>
+                  <span className="project-step-number" aria-hidden="true">{step.number}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>

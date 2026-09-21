@@ -32,7 +32,7 @@ test("renders every public route", async () => {
     ["/members", /Meet the team/],
     ["/showcase", /Selected nonprofit partnerships/],
     ["/join", /Two ways to work with us/],
-    ["/recruitment", /Recruitment timeline/],
+    ["/recruitment", /Fall 2026 recruitment timeline/],
   ];
 
   for (const [pathname, expectedCopy] of routes) {
@@ -54,10 +54,7 @@ test("derives the member year and counts from site data", async () => {
 
   assert.ok(year);
   assert.match(visibleHtml, new RegExp(`${year} team`));
-  assert.match(
-    visibleHtml,
-    new RegExp(`${String(boardCount).padStart(2, "0")} members?`),
-  );
+  assert.doesNotMatch(visibleHtml, /06 members|Bio coming soon/);
   if (generalCount > 0) {
     assert.match(
       visibleHtml,
@@ -68,7 +65,6 @@ test("derives the member year and counts from site data", async () => {
   }
   assert.doesNotMatch(visibleHtml, /archive/i);
   assert.doesNotMatch(visibleHtml, /Current member with a roster update/i);
-  assert.match(membersPage, /board\.length/);
   assert.match(membersPage, /generalMembers\.length/);
   assert.equal(
     (siteData.match(/role: "Co-Head of Project Management"/g) ?? []).length,
@@ -156,7 +152,10 @@ test("shows partner case studies without exposing unapproved files", async () =>
   assert.match(html, /NeuroSpring/);
   assert.match(html, /World Telehealth Initiative/);
   assert.match(html, /international clinical sites/);
-  assert.match(html, /Approved project visual/);
+  for (const filename of ["neurospring-map.png", "neurospring-heatmap.png", "wti-monthly-trends.png", "wti-word-clouds.png"]) {
+    assert.ok(html.includes(filename));
+    await access(new URL(`../public/images/showcase/${filename}`, import.meta.url));
+  }
   assert.match(html, /redacted or demonstration data/);
   assert.doesNotMatch(html, /View approved report excerpt/);
 });

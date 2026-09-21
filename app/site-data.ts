@@ -13,35 +13,35 @@ export const recruitment = {
   timeline: [
     {
       number: "01",
-      timing: "To be announced",
+      timing: "September 24",
       title: "Applications open",
       description:
         "The current student application will be linked on this page when recruitment begins.",
     },
     {
       number: "02",
-      timing: "To be announced",
+      timing: "Week 1 · Exact date TBD",
       title: "Info session",
       description:
         "Meet the chapter and hear about our projects, teams, and expectations.",
     },
     {
       number: "03",
-      timing: "To be announced",
+      timing: "October 7 · 11:59 p.m. PT",
       title: "Applications due",
       description:
         "Submit your interests, experience, and what you hope to contribute.",
     },
     {
       number: "04",
-      timing: "To be announced",
+      timing: "Week 3 · October 12–16",
       title: "Interviews",
       description:
         "Selected applicants will be invited to interview with the team.",
     },
     {
       number: "05",
-      timing: "To be announced",
+      timing: "Week 4 · October 19",
       title: "Decisions",
       description:
         "Applicants receive decisions and information about next steps.",
@@ -217,7 +217,18 @@ export const showcasePartners: ShowcasePartner[] = [
       "An interactive tool for filtering and managing grantmakers, exploring heatmaps, taking notes, and organizing outreach",
       "A report highlighting trends across the grantmaker landscape",
     ],
-    images: [],
+    images: [
+      {
+        src: "/images/showcase/neurospring-map.png",
+        alt: "Map of grantmaker locations grouped across California",
+        caption: "Grantmaker locations across California",
+      },
+      {
+        src: "/images/showcase/neurospring-heatmap.png",
+        alt: "Heatmap of grantmaker locations in the Los Angeles region",
+        caption: "Los Angeles grantmaker heatmap",
+      },
+    ],
     reportExcerpt: "",
   },
   {
@@ -236,7 +247,18 @@ export const showcasePartners: ShowcasePartner[] = [
       "Analysis of clinical activity, volunteer hours, seasonal trends, and geographic patterns",
       "Tableau visualizations of telehealth reach and growth over time",
     ],
-    images: [],
+    images: [
+      {
+        src: "/images/showcase/wti-monthly-trends.png",
+        alt: "Monthly charts of estimated engagement, session counts, and hours",
+        caption: "Monthly engagement, sessions, and hours",
+      },
+      {
+        src: "/images/showcase/wti-word-clouds.png",
+        alt: "Word clouds showing overall themes and themes among volunteers, partners, and donors",
+        caption: "Themes across volunteers, partners, and donors",
+      },
+    ],
     reportExcerpt: "",
   },
   {
