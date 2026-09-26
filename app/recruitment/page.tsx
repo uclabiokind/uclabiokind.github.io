@@ -92,6 +92,16 @@ export default function RecruitmentPage() {
                 <div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
+                  {step.link && (
+                    <a
+                      className="text-link"
+                      href={step.link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {step.link.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
                 </div>
               </article>
             ))}

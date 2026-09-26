@@ -8,22 +8,27 @@ export const mailingListUrl = "https://forms.gle/dWmbJksPTsv1jBVr9";
 // Update these fields when a new student recruitment cycle opens.
 export const recruitment = {
   status: "We are currently recruiting for the Fall 2026 cycle.",
-  applicationUrl: "",
+  applicationUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSf8I8Mu_5rI6AXE95yVwF-2oqeOD7lQ19i7XxQIHgYCjIlGGA/viewform",
   updatesUrl: mailingListUrl,
   timeline: [
     {
       number: "01",
-      timing: "September 24",
+      timing: "September 25",
       title: "Applications open",
       description:
-        "The current student application will be linked on this page when recruitment begins.",
+        "Applications are open. Use the Apply now link above to submit your application.",
     },
     {
       number: "02",
-      timing: "Week 1 · Exact date TBD",
+      timing: "Monday, October 5 · 6 p.m. PT",
       title: "Info session",
       description:
-        "Meet the chapter and hear about our projects, teams, and expectations.",
+        "Join us on Zoom to meet the chapter and hear about our projects, teams, and expectations.",
+      link: {
+        label: "Join the info session on Zoom",
+        href: "https://us04web.zoom.us/j/78179628323?pwd=myRJQ26I8Evt8oRUFdczLTTJHjpHau.1",
+      },
     },
     {
       number: "03",

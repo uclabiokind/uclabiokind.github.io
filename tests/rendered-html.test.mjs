@@ -97,9 +97,10 @@ test("offers clear student and nonprofit paths", async () => {
     /mailto:uclachapter@biokind\.org\?subject=Nonprofit%20partnership%20inquiry/,
   );
   assert.match(recruitmentHtml, /We are currently recruiting for the Fall 2026 cycle/);
-  assert.match(recruitmentHtml, /Join the general interest mailing list/);
+  assert.match(recruitmentHtml, /Apply now/);
   assert.doesNotMatch(recruitmentHtml, /A simple path into the chapter/);
-  assert.match(recruitmentHtml, /forms\.gle\/dWmbJksPTsv1jBVr9/);
+  assert.ok(recruitmentHtml.includes('href="https://docs.google.com/forms/d/e/1FAIpQLSf8I8Mu_5rI6AXE95yVwF-2oqeOD7lQ19i7XxQIHgYCjIlGGA/viewform"'));
+  assert.ok(recruitmentHtml.includes('href="https://us04web.zoom.us/j/78179628323?pwd=myRJQ26I8Evt8oRUFdczLTTJHjpHau.1"'));
   assert.match(recruitmentHtml, /Applications open/);
   assert.match(recruitmentHtml, /Decisions/);
   assert.doesNotMatch(recruitmentHtml, /09\/26|10\/4|10\/8|10\/11|2023/);
